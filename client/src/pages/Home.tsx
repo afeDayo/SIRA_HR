@@ -24,6 +24,7 @@ const avatars = [
 export default function Home() {
   return (
     <>
+      <title>SIRA HR — Building the teams that drive growth</title>
       <section className={`${wrapWide} relative overflow-hidden pt-[clamp(130px,15vw,180px)] pb-[clamp(40px,6vw,72px)]`}>
         <div className="grid grid-cols-[1.15fr_0.85fr] items-center gap-[clamp(30px,5vw,64px)] max-[960px]:grid-cols-1 max-[960px]:gap-10">
           <div>
@@ -101,7 +102,7 @@ export default function Home() {
         <div className="border-t border-line">
           {services.map((s) => (
             <Reveal key={s.id}>
-              <Link to="/services" className="group relative grid grid-cols-[80px_1.1fr_1.4fr_auto] items-center gap-7 border-b border-line px-2 py-[34px] transition-all duration-500 ease-brand hover:px-[22px] max-[960px]:grid-cols-[50px_1fr_auto] max-[960px]:gap-[18px]">
+              <Link to={`/services#${s.id}`} className="group relative grid grid-cols-[80px_1.1fr_1.4fr_auto] items-center gap-7 border-b border-line px-2 py-[34px] transition-all duration-500 ease-brand hover:px-[22px] max-[960px]:grid-cols-[50px_1fr_auto] max-[960px]:gap-[18px]">
                 <span className="pointer-events-none absolute inset-0 rounded-xl bg-surface opacity-0 transition duration-500 ease-brand group-hover:opacity-100" />
                 <span className="relative z-[1] font-display text-[22px] tabular-nums text-brass">{s.num}</span>
                 <h3 className="relative z-[1] font-display text-[clamp(22px,2.6vw,29px)] leading-[1.1] text-ink">{s.title}</h3>

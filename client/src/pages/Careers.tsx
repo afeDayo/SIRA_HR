@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router";
 import { FiArrowRight } from "react-icons/fi";
 import Reveal from "../components/Reveal";
-import Button from "../components/Button";
+import ApplyForm from "../components/ApplyForm";
 import PageHero from "../components/PageHero";
 import { jobs } from "../lib/data";
 import { wrap, section, pill, pillGray } from "../lib/ui";
@@ -27,6 +27,8 @@ export default function Careers() {
             {categories.map((c) => (
               <button
                 key={c}
+                type="button"
+                aria-pressed={c === filter}
                 onClick={() => setFilter(c)}
                 className={`inline-flex cursor-pointer items-center rounded-full border px-4 py-2 text-[13px] font-semibold transition duration-300 ${c === filter ? "border-pine bg-pine text-surface" : "border-line bg-surface text-ink-soft hover:border-pine"}`}
               >
@@ -63,10 +65,15 @@ export default function Careers() {
         ))}
 
         <Reveal>
-          <div className="mt-10 rounded-brand border border-dashed border-line bg-surface p-[30px] text-center">
-            <p className="mb-1.5 text-ink-soft">Don&rsquo;t see the right role?</p>
-            <p className="mb-[18px] font-display text-[22px] text-ink">Send us your CV — we&rsquo;ll keep you in mind.</p>
-            <Button to="/contact" withArrow>Submit your CV</Button>
+          <div id="apply" className="mt-10 grid scroll-mt-28 grid-cols-2 gap-[clamp(24px,4vw,56px)] rounded-brand-lg border border-dashed border-line bg-surface p-[clamp(24px,4vw,44px)] max-[960px]:grid-cols-1">
+            <div>
+              <p className="mb-1.5 text-ink-soft">Don&rsquo;t see the right role?</p>
+              <h2 className="mb-3 font-display text-[clamp(24px,3vw,32px)] leading-[1.15] text-ink">Send us your CV — we&rsquo;ll keep you in mind.</h2>
+              <p className="text-[15px] text-ink-soft">
+                Share a link to your LinkedIn profile or CV. When a role that fits comes up, we&rsquo;ll reach out to you first.
+              </p>
+            </div>
+            <ApplyForm jobId="general" jobTitle="General application" />
           </div>
         </Reveal>
       </div>

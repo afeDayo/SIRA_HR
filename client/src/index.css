@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ground: light-dark(#f3ecdd, #0b2a24);
+  --color-ground-2: light-dark(#ede4d2, #0e332c);
+  --color-surface: light-dark(#fbf7ee, #123a32);
+  --color-ink: light-dark(#12332c, #eee6d4);
+  --color-ink-soft: light-dark(#4a6259, #b4ccc3);
+  --color-ink-faint: light-dark(#7c918a, #7e988e);
+  --color-pine: light-dark(#124f45, #8fc3b4);
+  --color-pine-deep: light-dark(#0c332c, #071e1a);
+  --color-pine-deeper: light-dark(#082722, #051714);
+  --color-teal: light-dark(#2c7c6d, #59a493);
+  --color-sage: light-dark(#7fb3a4, #8fc3b4);
+  --color-sage-soft: light-dark(#c8ded6, #1c4a41);
+  --color-line: light-dark(rgba(18, 51, 44, 0.14), rgba(230, 222, 204, 0.16));
+  --color-line-soft: light-dark(rgba(18, 51, 44, 0.08), rgba(230, 222, 204, 0.08));
+  --color-brass: #b4884a;
+  --color-on-dark: #eee6d4;
+  --color-on-dark-soft: #a9c4bb;
+  --color-danger: light-dark(#b4453a, #f19a8f);
+
+  --color-btn: light-dark(#124f45, #8fc3b4);
+  --color-btn-fg: light-dark(#f3ecdd, #082722);
+  --color-btn-hover: light-dark(#0c332c, #a6d3c6);
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --radius-brand: 18px;
+  --radius-brand-lg: 26px;
+
+  --shadow-soft: 0 24px 60px -40px var(--shadow-color);
+  --shadow-brand: 24px 40px 80px -48px var(--shadow-color-strong);
+
+  --ease-brand: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --animate-morph: morph 14s ease-in-out infinite;
+  --animate-floaty: floaty 6s ease-in-out infinite;
+}
+
+:root {
+  color-scheme: light dark;
+  --shadow-color: light-dark(rgba(12, 51, 44, 0.3), rgba(0, 0, 0, 0.5));
+  --shadow-color-strong: light-dark(rgba(12, 51, 44, 0.45), rgba(0, 0, 0, 0.6));
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 44% 56% 58% 42% / 52% 44% 56% 48%;
+  }
+  50% {
+    border-radius: 56% 44% 42% 58% / 44% 56% 42% 56%;
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--color-teal);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

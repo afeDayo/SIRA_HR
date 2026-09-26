@@ -1,4 +1,8 @@
-import express, { type NextFunction, type Request, type Response } from "express";
+import express, {
+  type NextFunction,
+  type Request,
+  type Response,
+} from "express";
 import cors from "cors";
 import helmet from "helmet";
 import mongoose from "mongoose";
@@ -30,24 +34,45 @@ app.use((_req, res) => {
   res.status(404).json({ ok: false, message: "Route not found." });
 });
 
-app.use((error: Error & { status?: number }, _req: Request, res: Response, _next: NextFunction) => {
-  if (error.status === 400) {
-    res.status(400).json({ ok: false, message: "The data sent was not valid. Please try again." });
-    return;
-  }
+app.use(
+  (
+    error: Error & { status?: number },
+    _req: Request,
+    res: Response,
+    _next: NextFunction,
+  ) => {
+    if (error.status === 400) {
+      res
+        .status(400)
+        .json({
+          ok: false,
+          message: "The data sent was not valid. Please try again.",
+        });
+      return;
+    }
 
-  console.error(error);
-  res.status(500).json({ ok: false, message: "Something went wrong on our end. Please try again." });
-});
+    console.error(error);
+    res
+      .status(500)
+      .json({
+        ok: false,
+        message: "Something went wrong on our end. Please try again.",
+      });
+  },
+);
 
 async function startServer() {
   if (!MONGODB_URI) {
-    console.error("MONGODB_URI is missing. Add it to server/.env or to your Render environment variables.");
+    console.error(
+      "MONGODB_URI is missing. Add it to server/.env or to your Render environment variables.",
+    );
     process.exit(1);
   }
 
   if (!isAdminSetUp()) {
-    console.warn("ADMIN_PASSWORD or JWT_SECRET is missing, so the admin dashboard is turned off.");
+    console.warn(
+      "ADMIN_PASSWORD or JWT_SECRET is missing, so the admin dashboard is turned off.",
+    );
   }
 
   await mongoose.connect(MONGODB_URI);

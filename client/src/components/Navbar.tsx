@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { FiMenu, FiX } from "react-icons/fi";
-import SiraMark from "./SiraMark";
+import Navlogo from "../assets/SIRI LOGO.png";
 import ThemeToggle from "./ThemeToggle";
 import Button from "./Button";
 import { nav } from "../lib/data";
@@ -49,7 +49,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-[90]">
+      <header className="fixed inset-x-0 top-0 z-90">
         <div
           className={`mx-auto mt-3.5 flex w-[calc(100%-28px)] max-w-340 items-center justify-between gap-5 rounded-full border border-line-soft py-2.75 pl-5.5 pr-3.5 backdrop-blur-[18px] backdrop-saturate-150 transition-all duration-500 ease-brand ${barStyle}`}
         >
@@ -58,16 +58,20 @@ export default function Navbar() {
             className="flex items-center gap-2.75 font-display text-[20px] font-semibold tracking-[-0.02em] text-ink"
             aria-label="SIRA HR home"
           >
-            <SiraMark className="h-8.5 w-9.5 flex-none" />
-            SIRA&nbsp;HR
+            <img src={Navlogo} alt="" className="w-14 flex-none" />
           </Link>
 
-          <nav className="flex items-center gap-1 max-[960px]:hidden" aria-label="Primary">
+          <nav
+            className="flex items-center gap-1 max-[960px]:hidden"
+            aria-label="Primary"
+          >
             {nav.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
-                className={({ isActive }) => `${linkBase} ${isActive ? "font-semibold text-pine" : "text-ink-soft"}`}
+                className={({ isActive }) =>
+                  `${linkBase} ${isActive ? "font-semibold text-pine" : "text-ink-soft"}`
+                }
               >
                 {item.label}
               </NavLink>
@@ -87,7 +91,11 @@ export default function Navbar() {
               aria-controls="mobile-menu"
               onClick={() => setMenuOpen(!menuOpen)}
             >
-              {menuOpen ? <FiX className="h-5 w-5" /> : <FiMenu className="h-5 w-5" />}
+              {menuOpen ? (
+                <FiX className="h-5 w-5" />
+              ) : (
+                <FiMenu className="h-5 w-5" />
+              )}
             </button>
           </div>
         </div>
@@ -98,7 +106,7 @@ export default function Navbar() {
           <motion.nav
             id="mobile-menu"
             aria-label="Mobile"
-            className="fixed inset-0 z-[80] flex flex-col gap-1.5 overflow-y-auto bg-ground px-[clamp(20px,5vw,64px)] pb-10 pt-27.5"
+            className="fixed inset-0 z-80 flex flex-col gap-1.5 overflow-y-auto bg-ground px-[clamp(20px,5vw,64px)] pb-10 pt-27.5"
             initial={{ opacity: 0, y: "-100%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
@@ -113,10 +121,16 @@ export default function Navbar() {
                 }
               >
                 {item.label}
-                <span className="font-sans text-[13px] text-ink-faint">{String(index + 1).padStart(2, "0")}</span>
+                <span className="font-sans text-[13px] text-ink-faint">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
               </NavLink>
             ))}
-            <Button to="/book" withArrow className="mt-5.5 w-full justify-center">
+            <Button
+              to="/book"
+              withArrow
+              className="mt-5.5 w-full justify-center"
+            >
               Book a discovery call
             </Button>
           </motion.nav>

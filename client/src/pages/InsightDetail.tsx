@@ -17,6 +17,7 @@ export default function InsightDetail() {
 
   return (
     <>
+      <title>{`${insight.title} · SIRA HR`}</title>
       <article className="mx-auto w-full max-w-[820px] px-[clamp(20px,5vw,64px)] pb-5 pt-[clamp(140px,16vw,200px)]">
         <Reveal>
           <p className="text-[13px] tracking-[0.04em] text-ink-faint">

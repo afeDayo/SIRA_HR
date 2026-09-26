@@ -7,7 +7,7 @@ import SectionHead from "../components/SectionHead";
 import PageHero from "../components/PageHero";
 import CtaBand from "../components/CtaBand";
 import { process, faqs } from "../lib/data";
-import { wrap, wrapWide, section, dmd } from "../lib/ui";
+import { wrap, wrapWide, section, headingMd } from "../lib/ui";
 
 const startSteps = [
   { n: "01", h: "Send your brief", p: "Send your role brief to hello@sira-hr.com or set up a 30-minute discovery call." },
@@ -102,7 +102,7 @@ export default function Process() {
 
       <div className={`mx-auto w-full max-w-[860px] px-[clamp(20px,5vw,64px)] ${section}`}>
         <Reveal><Eyebrow>Questions</Eyebrow></Reveal>
-        <Reveal delay={0.08}><h2 className={`${dmd} mb-10 mt-4`}>Frequently asked.</h2></Reveal>
+        <Reveal delay={0.08}><h2 className={`${headingMd} mb-10 mt-4`}>Frequently asked.</h2></Reveal>
         <Reveal delay={0.12}><Faq /></Reveal>
       </div>
 

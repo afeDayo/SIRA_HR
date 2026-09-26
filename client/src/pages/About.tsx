@@ -6,7 +6,7 @@ import SectionHead from "../components/SectionHead";
 import PageHero from "../components/PageHero";
 import CtaBand from "../components/CtaBand";
 import { whySira } from "../lib/data";
-import { wrap, wrapWide, section, dsm, mediaGrad } from "../lib/ui";
+import { wrap, wrapWide, section, headingSm, mediaGrad } from "../lib/ui";
 
 const whyIcons = [FiZap, FiShield, FiCheck, FiEye];
 const split = "grid grid-cols-2 items-center gap-[clamp(30px,5vw,72px)] max-[960px]:grid-cols-1 max-[960px]:gap-9";
@@ -35,7 +35,7 @@ export default function About() {
           <Reveal delay={0.1}>
             <div>
               <Eyebrow>Our story</Eyebrow>
-              <h2 className={`${dsm} my-4`}>Recruitment rigor, market knowledge and a candidate network — brought together to get hiring right.</h2>
+              <h2 className={`${headingSm} my-4`}>Recruitment rigor, market knowledge and a candidate network — brought together to get hiring right.</h2>
               <p className="mb-4 text-ink-soft">
                 SIRA HR is a specialist recruitment and HR firm that partners with organisations across industries to attract, assess and
                 place the right people at every level. Whether you&rsquo;re making your first critical leadership hire, building out a

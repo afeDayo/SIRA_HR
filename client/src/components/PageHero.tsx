@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Reveal from "./Reveal";
 import Eyebrow from "./Eyebrow";
-import { wrapWide, dlg, lead as leadCls } from "../lib/ui";
+import { wrapWide, headingLg, leadText } from "../lib/ui";
 
 type Props = {
   crumb: string;
@@ -24,10 +24,10 @@ export default function PageHero({ crumb, eyebrow, title, lead }: Props) {
         </div>
       </Reveal>
       <Reveal delay={0.1}>
-        <h1 className={`${dlg} mt-5 max-w-[16ch]`}>{title}</h1>
+        <h1 className={`${headingLg} mt-5 max-w-[16ch]`}>{title}</h1>
       </Reveal>
       <Reveal delay={0.16}>
-        <p className={`${leadCls} mt-[22px]`}>{lead}</p>
+        <p className={`${leadText} mt-[22px]`}>{lead}</p>
       </Reveal>
     </div>
   );

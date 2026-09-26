@@ -3,12 +3,12 @@ export const wrapWide = "mx-auto w-full max-w-[1360px] px-[clamp(20px,5vw,64px)]
 export const section = "py-[clamp(72px,10vw,132px)]";
 
 const headingBase = "font-display font-normal tracking-[-0.015em] text-balance text-ink";
-export const dxl = `${headingBase} text-[clamp(44px,8.2vw,104px)] leading-[0.98]`;
-export const dlg = `${headingBase} text-[clamp(38px,6vw,74px)] leading-[1.04]`;
-export const dmd = `${headingBase} text-[clamp(30px,4.4vw,52px)] leading-[1.04]`;
-export const dsm = `${headingBase} text-[clamp(24px,3.2vw,36px)] leading-[1.1]`;
+export const headingXl = `${headingBase} text-[clamp(44px,8.2vw,104px)] leading-[0.98]`;
+export const headingLg = `${headingBase} text-[clamp(38px,6vw,74px)] leading-[1.04]`;
+export const headingMd = `${headingBase} text-[clamp(30px,4.4vw,52px)] leading-[1.04]`;
+export const headingSm = `${headingBase} text-[clamp(24px,3.2vw,36px)] leading-[1.1]`;
 
-export const lead = "text-[clamp(18px,2.1vw,21px)] leading-[1.6] text-ink-soft max-w-[56ch]";
+export const leadText = "text-[clamp(18px,2.1vw,21px)] leading-[1.6] text-ink-soft max-w-[56ch]";
 
 export const grad = {
   1: "bg-[linear-gradient(150deg,#124F45,#2C7C6D)]",

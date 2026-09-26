@@ -4,7 +4,7 @@ import PageHero from "../components/PageHero";
 import InsightCard from "../components/InsightCard";
 import NewsletterForm from "../components/NewsletterForm";
 import { insights } from "../lib/data";
-import { wrapWide, section, dmd, lead as leadCls } from "../lib/ui";
+import { wrapWide, section, headingMd, leadText } from "../lib/ui";
 
 export default function Insights() {
   return (
@@ -29,8 +29,8 @@ export default function Insights() {
       <div className="bg-pine-deep">
         <div className={`mx-auto w-full max-w-[720px] px-[clamp(20px,5vw,64px)] ${section} text-center`}>
           <Reveal><div className="flex justify-center"><Eyebrow center onDark>Never miss a nugget</Eyebrow></div></Reveal>
-          <Reveal delay={0.08}><h2 className={`${dmd} my-4 text-on-dark`}>Get our insights in your inbox.</h2></Reveal>
-          <Reveal delay={0.14}><p className={`${leadCls} mx-auto mb-[26px] text-on-dark-soft`}>Join the newsletter for practical hiring and leadership insights, roughly twice a month. No noise.</p></Reveal>
+          <Reveal delay={0.08}><h2 className={`${headingMd} my-4 text-on-dark`}>Get our insights in your inbox.</h2></Reveal>
+          <Reveal delay={0.14}><p className={`${leadText} mx-auto mb-[26px] text-on-dark-soft`}>Join the newsletter for practical hiring and leadership insights, roughly twice a month. No noise.</p></Reveal>
           <Reveal delay={0.18}><NewsletterForm variant="dark" /></Reveal>
         </div>
       </div>

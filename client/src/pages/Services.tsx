@@ -6,7 +6,7 @@ import SectionHead from "../components/SectionHead";
 import PageHero from "../components/PageHero";
 import CtaBand from "../components/CtaBand";
 import { services, pricing } from "../lib/data";
-import { wrapWide, section, dsm, mediaGrad } from "../lib/ui";
+import { wrapWide, section, headingSm, mediaGrad } from "../lib/ui";
 
 const split = "grid grid-cols-2 items-center gap-[clamp(30px,5vw,72px)] max-[960px]:grid-cols-1 max-[960px]:gap-9";
 
@@ -37,7 +37,7 @@ export default function Services() {
           const copy = (
             <div>
               <span className="font-display text-[26px] tabular-nums text-brass">{s.num}</span>
-              <h2 className={`${dsm} mb-[18px] mt-3`}>{s.title}</h2>
+              <h2 className={`${headingSm} mb-[18px] mt-3`}>{s.title}</h2>
               <p className="mb-5 text-ink-soft">{s.body}</p>
               <div className="grid grid-cols-2 gap-5 max-[720px]:grid-cols-1">
                 {s.points.map((p) => (

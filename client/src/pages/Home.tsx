@@ -11,7 +11,7 @@ import LinkArrow from "../components/LinkArrow";
 import InsightCard from "../components/InsightCard";
 import CtaBand from "../components/CtaBand";
 import { heroStats, services, differentiators, process, insights } from "../lib/data";
-import { wrap, wrapWide, section, dxl, dsm, lead as leadCls, blobGrad } from "../lib/ui";
+import { wrap, wrapWide, section, headingXl, headingSm, leadText, blobGrad } from "../lib/ui";
 
 const diffIcons = [FiCheck, FiZap, FiSearch, FiClipboard];
 const avatars = [
@@ -29,12 +29,12 @@ export default function Home() {
           <div>
             <Reveal><Eyebrow>Specialist Recruitment &amp; HR · Lagos, Nigeria</Eyebrow></Reveal>
             <Reveal delay={0.08}>
-              <h1 className={`${dxl} mb-[26px] mt-[22px]`}>
+              <h1 className={`${headingXl} mb-[26px] mt-[22px]`}>
                 Building the teams that <span className="font-light italic">drive growth</span>.
               </h1>
             </Reveal>
             <Reveal delay={0.16}>
-              <p className={leadCls}>
+              <p className={leadText}>
                 SIRA HR partners with organisations to attract, assess and place the right people at every level — from your first
                 specialist hire to the C-suite. <em>SIRA means &ldquo;journey,&rdquo; and we&rsquo;re in it with you.</em>
               </p>
@@ -121,7 +121,7 @@ export default function Home() {
             <div>
               <Reveal><Eyebrow onDark>What makes us different</Eyebrow></Reveal>
               <Reveal delay={0.08}><h2 className="mt-[18px] font-display text-[clamp(30px,4.4vw,52px)] leading-[1.04] tracking-[-0.015em] text-balance text-on-dark">We assess. We stay. We don&rsquo;t take shortcuts.</h2></Reveal>
-              <Reveal delay={0.16}><p className={`${leadCls} mt-5 text-on-dark-soft`}>Anyone can forward a CV. We evaluate every candidate against a competency framework built specifically for your role and level — then we stay after the offer, with structured check-ins and a replacement guarantee.</p></Reveal>
+              <Reveal delay={0.16}><p className={`${leadText} mt-5 text-on-dark-soft`}>Anyone can forward a CV. We evaluate every candidate against a competency framework built specifically for your role and level — then we stay after the offer, with structured check-ins and a replacement guarantee.</p></Reveal>
               <Reveal delay={0.24}><div className="mt-[30px]"><Button to="/about" variant="outline-light" withArrow>Our story</Button></div></Reveal>
             </div>
             <Reveal delay={0.12}>
@@ -204,8 +204,8 @@ export default function Home() {
             <Reveal delay={0.1}>
               <div>
                 <Eyebrow onDark>Open roles</Eyebrow>
-                <h3 className={`${dsm} my-4 text-on-dark`}>We&rsquo;re hiring on behalf of ambitious teams.</h3>
-                <p className={`${leadCls} mb-[26px] text-on-dark-soft`}>From HR leadership to founding sales — explore the roles we&rsquo;re actively recruiting for right now.</p>
+                <h3 className={`${headingSm} my-4 text-on-dark`}>We&rsquo;re hiring on behalf of ambitious teams.</h3>
+                <p className={`${leadText} mb-[26px] text-on-dark-soft`}>From HR leadership to founding sales — explore the roles we&rsquo;re actively recruiting for right now.</p>
                 <Button to="/careers" variant="light" withArrow>View open roles</Button>
               </div>
             </Reveal>

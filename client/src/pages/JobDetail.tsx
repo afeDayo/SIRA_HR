@@ -4,7 +4,7 @@ import Reveal from "../components/Reveal";
 import ApplyForm from "../components/ApplyForm";
 import NotFound from "./NotFound";
 import { jobs } from "../lib/data";
-import { wrapWide, dlg, lead as leadCls, pill, pillGray } from "../lib/ui";
+import { wrapWide, headingLg, leadText, pill, pillGray } from "../lib/ui";
 
 export default function JobDetail() {
   const { id } = useParams();
@@ -39,13 +39,13 @@ export default function JobDetail() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <h1 className={`${dlg} max-w-[18ch]`}>{job.title}</h1>
+          <h1 className={`${headingLg} max-w-[18ch]`}>{job.title}</h1>
         </Reveal>
 
         <div className="mt-10 grid grid-cols-2 items-start gap-[clamp(30px,5vw,64px)] max-[960px]:grid-cols-1 max-[960px]:gap-9">
           <Reveal delay={0.14}>
             <div>
-              <p className={`${leadCls} mb-[30px]`}>{job.summary}</p>
+              <p className={`${leadText} mb-[30px]`}>{job.summary}</p>
               <h3 className="mb-3.5 font-display text-[24px] text-ink">What you&rsquo;ll do</h3>
               <div className="mb-[30px]">{list(job.responsibilities)}</div>
               <h3 className="mb-3.5 font-display text-[24px] text-ink">What we&rsquo;re looking for</h3>

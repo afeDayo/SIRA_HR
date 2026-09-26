@@ -7,7 +7,7 @@ import InsightCard from "../components/InsightCard";
 import CtaBand from "../components/CtaBand";
 import NotFound from "./NotFound";
 import { insights } from "../lib/data";
-import { wrapWide, section, dsm, pill, grad } from "../lib/ui";
+import { wrapWide, section, headingSm, pill, grad } from "../lib/ui";
 
 export default function InsightDetail() {
   const { id } = useParams();
@@ -53,7 +53,7 @@ export default function InsightDetail() {
       <div className={`${wrapWide} ${section}`}>
         <div className="mb-14">
           <Eyebrow>Keep reading</Eyebrow>
-          <h2 className={`${dsm} mt-3.5`}>More SIRA HR Nuggets</h2>
+          <h2 className={`${headingSm} mt-3.5`}>More SIRA HR Nuggets</h2>
         </div>
         <div className="grid grid-cols-3 gap-6 max-[960px]:grid-cols-2 max-[720px]:grid-cols-1">
           {more.map((a, i) => (

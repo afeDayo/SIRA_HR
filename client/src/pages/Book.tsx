@@ -1,7 +1,7 @@
 import Reveal from "../components/Reveal";
 import PageHero from "../components/PageHero";
 import BookingForm from "../components/BookingForm";
-import { wrapWide, section, dsm } from "../lib/ui";
+import { wrapWide, section, headingSm } from "../lib/ui";
 
 const expect = [
   { n: "1", h: "Understand your needs", p: "We learn about the role, the team and what success looks like for you." },
@@ -23,7 +23,7 @@ export default function Book() {
         <div className="grid grid-cols-2 items-start gap-[clamp(30px,5vw,72px)] max-[960px]:grid-cols-1 max-[960px]:gap-9">
           <Reveal>
             <div>
-              <h3 className={`${dsm} mb-[22px]`}>What to expect</h3>
+              <h3 className={`${headingSm} mb-[22px]`}>What to expect</h3>
               <div className="flex flex-col">
                 {expect.map((e) => (
                   <div key={e.n} className="grid grid-cols-[auto_1fr] items-start gap-[18px] border-b border-line py-5 last:border-b-0">

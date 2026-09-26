@@ -1,7 +1,7 @@
 import Reveal from "./Reveal";
 import Eyebrow from "./Eyebrow";
 import Button from "./Button";
-import { wrap, dlg, lead as leadCls } from "../lib/ui";
+import { wrap, headingLg, leadText } from "../lib/ui";
 
 type Action = { label: string; to: string; variant?: "light" | "outline" };
 
@@ -28,11 +28,11 @@ export default function CtaBand({ eyebrow, title, lead, actions }: Props) {
           </Reveal>
         )}
         <Reveal delay={0.06}>
-          <h2 className={`${dlg} mx-auto mt-5 max-w-[16ch] text-on-dark`}>{title}</h2>
+          <h2 className={`${headingLg} mx-auto mt-5 max-w-[16ch] text-on-dark`}>{title}</h2>
         </Reveal>
         {lead && (
           <Reveal delay={0.12}>
-            <p className={`${leadCls} mx-auto mt-[22px] text-center text-on-dark-soft`}>{lead}</p>
+            <p className={`${leadText} mx-auto mt-[22px] text-center text-on-dark-soft`}>{lead}</p>
           </Reveal>
         )}
         <Reveal delay={0.18}>

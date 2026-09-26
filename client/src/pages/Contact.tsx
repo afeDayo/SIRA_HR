@@ -11,7 +11,7 @@ const rows = [
   { Icon: FiMail, label: "Email", value: site.email, href: `mailto:${site.email}` },
   { Icon: FiPhone, label: "Phone", value: site.phone, href: `tel:${site.phone.replace(/\s/g, "")}` },
   { Icon: FiMapPin, label: "Based in", value: site.location },
-  { Icon: FiLinkedin, label: "Connect", value: "@sira_hr · SIRA HR on LinkedIn" },
+  { Icon: FiLinkedin, label: "Connect", value: "SIRA HR on LinkedIn", href: site.linkedin },
 ];
 
 export default function Contact() {
@@ -35,7 +35,14 @@ export default function Contact() {
                     <div>
                       <div className="text-[12.5px] font-semibold uppercase tracking-[0.06em] text-ink-faint">{label}</div>
                       {href ? (
-                        <a href={href} className="text-[17px] font-medium text-ink transition hover:text-pine">{value}</a>
+                        <a
+                          href={href}
+                          target={href.startsWith("http") ? "_blank" : undefined}
+                          rel="noopener noreferrer"
+                          className="text-[17px] font-medium text-ink transition hover:text-pine"
+                        >
+                          {value}
+                        </a>
                       ) : (
                         <div className="text-[17px] font-medium text-ink">{value}</div>
                       )}

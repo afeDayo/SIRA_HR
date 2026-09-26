@@ -13,6 +13,7 @@ type Props = {
 export default function PageHero({ crumb, eyebrow, title, lead }: Props) {
   return (
     <div className={`${wrapWide} pt-[clamp(140px,16vw,200px)] pb-[clamp(30px,5vw,60px)]`}>
+      <title>{`${crumb} · SIRA HR`}</title>
       <Reveal>
         <p className="text-[13px] tracking-[0.04em] text-ink-faint">
           <b className="font-semibold text-pine">SIRA HR</b>&nbsp;/&nbsp;{crumb}

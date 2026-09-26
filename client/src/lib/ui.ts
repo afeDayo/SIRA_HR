@@ -26,4 +26,3 @@ export const inputCls =
 export const labelCls = "mb-2 block text-[13px] font-semibold text-ink-soft";
 export const fieldRow = "grid grid-cols-2 gap-4 max-[720px]:grid-cols-1";
 export const formNote = "mt-2 text-[13px] text-ink-faint";
-export const formError = "mt-2 text-[13px] font-semibold text-danger";

@@ -5,61 +5,31 @@ export type ApiResult = {
   message: string;
 };
 
-async function post(path: string, body: object): Promise<ApiResult> {
+type RequestOptions = {
+  method?: "GET" | "POST" | "DELETE";
+  body?: object;
+  token?: string;
+};
+
+export async function request<T = ApiResult>(path: string, options: RequestOptions = {}): Promise<T & ApiResult> {
+  const headers: Record<string, string> = { "Content-Type": "application/json" };
+  if (options.token) headers.Authorization = `Bearer ${options.token}`;
+
   try {
     const response = await fetch(`${API_URL}/api${path}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
+      method: options.method ?? "GET",
+      headers,
+      body: options.body ? JSON.stringify(options.body) : undefined,
     });
-    return (await response.json()) as ApiResult;
+    return await response.json();
   } catch {
     return {
       ok: false,
       message: "We couldn't reach the server. Please check your connection and try again.",
-    };
+    } as T & ApiResult;
   }
 }
 
-export type ContactPayload = {
-  name: string;
-  company?: string;
-  email: string;
-  phone?: string;
-  service?: string;
-  message: string;
-};
-
-export type BookingPayload = {
-  name: string;
-  company?: string;
-  email: string;
-  date: string;
-  time: string;
-  message?: string;
-};
-
-export type ApplicationPayload = {
-  jobId: string;
-  jobTitle: string;
-  name: string;
-  email: string;
-  link?: string;
-  message?: string;
-};
-
-export function submitContact(payload: ContactPayload) {
-  return post("/contact", payload);
-}
-
-export function submitBooking(payload: BookingPayload) {
-  return post("/bookings", payload);
-}
-
-export function submitApplication(payload: ApplicationPayload) {
-  return post("/applications", payload);
-}
-
-export function subscribeNewsletter(email: string) {
-  return post("/newsletter", { email });
+export function sendForm(path: string, values: object) {
+  return request(path, { method: "POST", body: values });
 }

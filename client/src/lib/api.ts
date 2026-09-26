@@ -3,6 +3,7 @@ const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:4000").replac
 export type ApiResult = {
   ok: boolean;
   message: string;
+  status?: number;
 };
 
 type RequestOptions = {
@@ -21,7 +22,8 @@ export async function request<T = ApiResult>(path: string, options: RequestOptio
       headers,
       body: options.body ? JSON.stringify(options.body) : undefined,
     });
-    return await response.json();
+    const data = await response.json();
+    return { ...data, status: response.status };
   } catch {
     return {
       ok: false,

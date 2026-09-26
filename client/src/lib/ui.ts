@@ -22,7 +22,7 @@ export const pill = "inline-flex items-center rounded-full bg-sage-soft px-3 py-
 export const pillGray = "inline-flex items-center rounded-full bg-line-soft px-3 py-[5px] text-xs font-semibold text-ink-soft";
 
 export const inputCls =
-  "w-full rounded-[12px] border border-line bg-ground px-4 py-[14px] font-sans text-[15.5px] text-ink transition duration-300 ease-brand focus:border-teal focus:bg-surface focus:outline-none focus:shadow-[0_0_0_4px_color-mix(in_srgb,var(--color-teal)_16%,transparent)]";
+  "w-full rounded-[12px] border border-line bg-ground px-4 py-[14px] font-sans text-[15.5px] text-ink transition duration-300 ease-brand focus:border-teal focus:bg-surface focus:outline-none focus:shadow-[0_0_0_4px_color-mix(in_srgb,var(--color-teal)_16%,transparent)] user-invalid:border-danger";
 export const labelCls = "mb-2 block text-[13px] font-semibold text-ink-soft";
 export const fieldRow = "grid grid-cols-2 gap-4 max-[720px]:grid-cols-1";
 export const formNote = "mt-2 text-[13px] text-ink-faint";

@@ -66,7 +66,7 @@ export default function Process() {
       <div className={`${wrap} ${section} pt-[30px]`}>
         {process.map((p, i) => (
           <Reveal key={p.num}>
-            <div className="group grid grid-cols-[auto_1fr] gap-[34px] pb-[52px] last:pb-0 max-[720px]:gap-5">
+            <div className={`group grid grid-cols-[auto_1fr] gap-8.5 max-[720px]:gap-5 ${i < process.length - 1 ? "pb-13" : ""}`}>
               <div className="flex flex-col items-center">
                 <div className="grid h-16 w-16 flex-none place-items-center rounded-full border border-line bg-surface font-display text-[24px] tabular-nums text-pine transition duration-500 ease-brand group-hover:scale-[1.06] group-hover:border-pine group-hover:bg-pine group-hover:text-surface max-[720px]:h-[54px] max-[720px]:w-[54px] max-[720px]:text-[20px]">
                   {p.num}

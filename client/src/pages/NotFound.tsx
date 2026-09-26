@@ -6,6 +6,7 @@ import { wrap, headingMd, leadText } from "../lib/ui";
 export default function NotFound() {
   return (
     <div className={`${wrap} grid min-h-[70vh] place-items-center pb-20 pt-[140px] text-center`}>
+      <title>Page not found · SIRA HR</title>
       <div className="max-w-[520px]">
         <SiraMark className="mx-auto block w-16" />
         <div className="mt-6 flex justify-center"><Eyebrow center>404 — Page not found</Eyebrow></div>

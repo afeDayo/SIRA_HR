@@ -1,3 +1,4 @@
+import type { NextFunction, Request, Response } from "express";
 import { z } from "zod";
 
 const name = z.string().trim().min(2, "Please enter your name.").max(120);
@@ -33,3 +34,17 @@ export const applicationSchema = z.object({
 export const newsletterSchema = z.object({
   email,
 });
+
+export function validate(schema: z.ZodType) {
+  return (req: Request, res: Response, next: NextFunction) => {
+    const result = schema.safeParse(req.body);
+
+    if (!result.success) {
+      res.status(400).json({ ok: false, message: result.error.issues[0].message });
+      return;
+    }
+
+    req.body = result.data;
+    next();
+  };
+}

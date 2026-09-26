@@ -17,12 +17,12 @@ type Props = {
 };
 
 const base =
-  "group inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border border-transparent px-6.5 py-3.75 text-[15px] font-semibold tracking-[0.01em] transition-all duration-500 ease-brand cursor-pointer disabled:cursor-not-allowed disabled:opacity-60";
+  "group inline-flex items-center gap-2.5 whitespace-nowrap rounded-full border px-6.5 py-3.75 text-[15px] font-semibold tracking-[0.01em] transition-all duration-500 ease-brand cursor-pointer disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-btn text-btn-fg hover:bg-btn-hover hover:-translate-y-0.5 hover:shadow-soft",
+  primary: "border-transparent bg-btn text-btn-fg hover:bg-btn-hover hover:-translate-y-0.5 hover:shadow-soft",
   ghost: "bg-transparent text-ink border-line hover:border-pine hover:text-pine hover:-translate-y-0.5",
-  light: "bg-on-dark text-pine-deep hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.5)]",
+  light: "border-transparent bg-on-dark text-pine-deep hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.5)]",
   "outline-light": "bg-transparent text-on-dark border-on-dark/30 hover:border-on-dark hover:-translate-y-0.5",
   danger: "bg-transparent text-danger border-danger/40 hover:border-danger hover:bg-danger/10",
 };

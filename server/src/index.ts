@@ -53,7 +53,12 @@ async function startServer() {
   await mongoose.connect(MONGODB_URI);
   console.log("Connected to MongoDB");
 
-  app.listen(PORT, () => {
+  app.listen(PORT, (error) => {
+    if (error) {
+      console.error(`Could not start on port ${PORT}:`, error.message);
+      process.exit(1);
+    }
+
     console.log(`SIRA HR API running on http://localhost:${PORT}`);
     console.log(`Allowed origins: ${allowedOrigins.join(", ")}`);
   });

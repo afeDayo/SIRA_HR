@@ -48,7 +48,7 @@ export default function Footer() {
             <Link className={footerLink} to="/careers">Open roles</Link>
             <Link className={footerLink} to="/contact">Send a brief</Link>
             <Link className={footerLink} to="/book">Book a call</Link>
-            <Link className={footerLink} to="/contact">Submit your CV</Link>
+            <Link className={footerLink} to="/careers#apply">Submit your CV</Link>
           </div>
 
           <div>

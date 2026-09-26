@@ -50,8 +50,8 @@ export default function Services() {
             </div>
           );
           return (
-            <Reveal key={s.id}>
-              <div className={`${split} mb-[clamp(60px,8vw,110px)] last:mb-0`}>
+            <Reveal key={s.id} className="mb-[clamp(60px,8vw,110px)] last:mb-0">
+              <div id={s.id} className={`${split} scroll-mt-28`}>
                 {reversed ? <>{media}{copy}</> : <>{copy}{media}</>}
               </div>
             </Reveal>

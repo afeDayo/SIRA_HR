@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useLocation } from "react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { FiMenu, FiX } from "react-icons/fi";
 import SiraMark from "./SiraMark";
@@ -8,9 +8,10 @@ import Button from "./Button";
 import { nav } from "../lib/data";
 
 const linkBase =
-  "rounded-full px-[15px] py-[9px] text-[14.5px] font-medium transition duration-300 ease-brand hover:bg-line-soft hover:text-ink";
+  "rounded-full px-3.75 py-2.25 text-[14.5px] font-medium transition duration-300 ease-brand hover:bg-line-soft hover:text-ink";
 
 export default function Navbar() {
+  const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -24,15 +25,23 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    function handleKey(event: KeyboardEvent) {
+      if (event.key === "Escape") setMenuOpen(false);
+    }
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKey);
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKey);
     };
   }, [menuOpen]);
-
-  function closeMenu() {
-    setMenuOpen(false);
-  }
 
   const barStyle = scrolled
     ? "shadow-soft bg-[color-mix(in_srgb,var(--color-ground)_90%,transparent)]"
@@ -42,15 +51,14 @@ export default function Navbar() {
     <>
       <header className="fixed inset-x-0 top-0 z-[90]">
         <div
-          className={`mx-auto mt-3.5 flex w-[calc(100%-28px)] max-w-[1360px] items-center justify-between gap-5 rounded-full border border-line-soft py-[11px] pl-[22px] pr-3.5 backdrop-blur-[18px] backdrop-saturate-150 transition-all duration-500 ease-brand ${barStyle}`}
+          className={`mx-auto mt-3.5 flex w-[calc(100%-28px)] max-w-340 items-center justify-between gap-5 rounded-full border border-line-soft py-2.75 pl-5.5 pr-3.5 backdrop-blur-[18px] backdrop-saturate-150 transition-all duration-500 ease-brand ${barStyle}`}
         >
           <Link
             to="/"
-            onClick={closeMenu}
-            className="flex items-center gap-[11px] font-display text-[20px] font-semibold tracking-[-0.02em] text-ink"
+            className="flex items-center gap-2.75 font-display text-[20px] font-semibold tracking-[-0.02em] text-ink"
             aria-label="SIRA HR home"
           >
-            <SiraMark className="h-[34px] w-[38px] flex-none" />
+            <SiraMark className="h-8.5 w-9.5 flex-none" />
             SIRA&nbsp;HR
           </Link>
 
@@ -68,16 +76,15 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <span className="max-[960px]:hidden">
-              <Button to="/book" withArrow>
-                Book a call
-              </Button>
-            </span>
+            <Button to="/book" withArrow className="max-[960px]:hidden">
+              Book a call
+            </Button>
             <button
               type="button"
               className="hidden h-11 w-11 cursor-pointer place-items-center rounded-full border border-line text-ink max-[960px]:grid"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
               onClick={() => setMenuOpen(!menuOpen)}
             >
               {menuOpen ? <FiX className="h-5 w-5" /> : <FiMenu className="h-5 w-5" />}
@@ -88,30 +95,31 @@ export default function Navbar() {
 
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
-            className="fixed inset-0 z-[80] flex flex-col gap-1.5 bg-ground px-[clamp(20px,5vw,64px)] pb-10 pt-[110px]"
+          <motion.nav
+            id="mobile-menu"
+            aria-label="Mobile"
+            className="fixed inset-0 z-[80] flex flex-col gap-1.5 overflow-y-auto bg-ground px-[clamp(20px,5vw,64px)] pb-10 pt-27.5"
             initial={{ opacity: 0, y: "-100%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.5, ease: [0.22, 0.61, 0.36, 1] }}
           >
             {nav.map((item, index) => (
-              <Link
+              <NavLink
                 key={item.to}
                 to={item.to}
-                onClick={closeMenu}
-                className="flex items-center justify-between border-b border-line-soft py-3 font-display text-[32px] text-ink"
+                className={({ isActive }) =>
+                  `flex items-center justify-between border-b border-line-soft py-3 font-display text-[32px] ${isActive ? "text-pine" : "text-ink"}`
+                }
               >
                 {item.label}
                 <span className="font-sans text-[13px] text-ink-faint">{String(index + 1).padStart(2, "0")}</span>
-              </Link>
+              </NavLink>
             ))}
-            <span className="mt-[22px]" onClick={closeMenu}>
-              <Button to="/book" withArrow className="w-full justify-center">
-                Book a discovery call
-              </Button>
-            </span>
-          </motion.div>
+            <Button to="/book" withArrow className="mt-5.5 w-full justify-center">
+              Book a discovery call
+            </Button>
+          </motion.nav>
         )}
       </AnimatePresence>
     </>

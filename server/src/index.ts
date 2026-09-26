@@ -1,9 +1,10 @@
-import "dotenv/config";
 import express, { type NextFunction, type Request, type Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
 import mongoose from "mongoose";
-import apiRoutes from "./routes/api.js";
+import formRoutes from "./routes/forms.js";
+import adminRoutes from "./routes/admin.js";
+import { isAdminSetUp } from "./lib/auth.js";
 
 const PORT = Number(process.env.PORT) || 4000;
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -22,7 +23,8 @@ app.get("/api/health", (_req, res) => {
   res.json({ ok: true, message: "SIRA HR API is running" });
 });
 
-app.use("/api", apiRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api", formRoutes);
 
 app.use((_req, res) => {
   res.status(404).json({ ok: false, message: "Route not found." });
@@ -42,6 +44,10 @@ async function startServer() {
   if (!MONGODB_URI) {
     console.error("MONGODB_URI is missing. Add it to server/.env or to your Render environment variables.");
     process.exit(1);
+  }
+
+  if (!isAdminSetUp()) {
+    console.warn("ADMIN_PASSWORD or JWT_SECRET is missing, so the admin dashboard is turned off.");
   }
 
   await mongoose.connect(MONGODB_URI);

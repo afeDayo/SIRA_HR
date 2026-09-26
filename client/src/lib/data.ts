@@ -29,11 +29,18 @@ export const services = [
     id: "executive-search",
     num: "01",
     title: "Executive Search & Senior Leadership",
-    short: "Placing qualified Directors, VPs and C-suite executives who shape where a business goes next.",
+    short:
+      "Placing qualified Directors, VPs and C-suite executives who shape where a business goes next.",
     body: "Placing qualified Directors, VPs and C-suite executives. Leadership hires shape culture, strategy and results for years — so we treat them with the depth they deserve: confidential search, rigorous assessment and market mapping that reaches leaders who aren't actively looking.",
     points: [
-      { h: "Confidential search", p: "Discreet outreach that protects your brand and the candidate's." },
-      { h: "Board-ready shortlists", p: "Written profiles, assessment notes and clear recommendations." },
+      {
+        h: "Confidential search",
+        p: "Discreet outreach that protects your brand and the candidate's.",
+      },
+      {
+        h: "Board-ready shortlists",
+        p: "Written profiles, assessment notes and clear recommendations.",
+      },
     ],
     price: "20% of first-year gross salary",
   },
@@ -41,11 +48,18 @@ export const services = [
     id: "specialist-placement",
     num: "02",
     title: "Mid-Level & Specialist Placement",
-    short: "Sourcing high-calibre professionals across engineering, product, sales, finance, operations and beyond.",
+    short:
+      "Sourcing high-calibre professionals across engineering, product, sales, finance, operations and beyond.",
     body: "Sourcing high-calibre professionals across engineering, product, sales, finance, operations and beyond. We map the full market and assess against a competency framework built for your role — so the shortlist is relevant, not just plentiful.",
     points: [
-      { h: "Full-market mapping", p: "Active and passive candidates, evaluated on fit." },
-      { h: "Structured assessment", p: "Competency-based, role-specific — no guesswork." },
+      {
+        h: "Full-market mapping",
+        p: "Active and passive candidates, evaluated on fit.",
+      },
+      {
+        h: "Structured assessment",
+        p: "Competency-based, role-specific — no guesswork.",
+      },
     ],
     price: "15% of first-year gross salary",
   },
@@ -53,11 +67,18 @@ export const services = [
     id: "graduate-programs",
     num: "03",
     title: "Graduate & Internship Program Design",
-    short: "Building and managing early-career pipelines that bring in the best graduate and internship talent.",
+    short:
+      "Building and managing early-career pipelines that bring in the best graduate and internship talent.",
     body: "Building and managing early-career pipelines that bring in the best graduate and internship talent. We design the program, run the assessment and help you develop the next generation of your workforce from day one.",
     points: [
-      { h: "Program design", p: "Structured intake, assessment and onboarding." },
-      { h: "Early-career pipeline", p: "A repeatable engine for future talent." },
+      {
+        h: "Program design",
+        p: "Structured intake, assessment and onboarding.",
+      },
+      {
+        h: "Early-career pipeline",
+        p: "A repeatable engine for future talent.",
+      },
     ],
     price: "Fixed project fee",
   },
@@ -65,36 +86,86 @@ export const services = [
     id: "hr-advisory",
     num: "04",
     title: "HR Advisory",
-    short: "Partnering with leadership teams to design HR strategies, people processes and workplace structures.",
+    short:
+      "Partnering with leadership teams to design HR strategies, people processes and workplace structures.",
     body: "Partnering with leadership teams to design HR strategies, people processes and workplace structures. From org design to performance frameworks, we help you build the systems that make great hiring stick.",
     points: [
       { h: "People strategy", p: "Org design, structures and workflows." },
-      { h: "Process & frameworks", p: "Performance, onboarding and retention." },
+      {
+        h: "Process & frameworks",
+        p: "Performance, onboarding and retention.",
+      },
     ],
     price: "Fixed project fee",
   },
 ];
 
 export const differentiators = [
-  { h: "We assess, not just screen", p: "Every candidate is evaluated against a competency framework built for the specific role and level." },
-  { h: "We don't disappear after the offer", p: "Every placement includes structured 30 and 60-day check-ins and a 90-day replacement guarantee." },
-  { h: "Deep market knowledge", p: "We understand the roles, the market and where the right people are — including those not actively looking." },
-  { h: "A curated shortlist in 14 days", p: "You receive 3 to 5 properly vetted candidates within two weeks — each with written profiles and notes." },
+  {
+    h: "We assess, not just screen",
+    p: "Every candidate is evaluated against a competency framework built for the specific role and level.",
+  },
+  {
+    h: "We don't disappear after the offer",
+    p: "Every placement includes structured 30 and 60-day check-ins and a 90-day replacement guarantee.",
+  },
+  {
+    h: "Deep market knowledge",
+    p: "We understand the roles, the market and where the right people are — including those not actively looking.",
+  },
+  {
+    h: "A curated shortlist in 14 days",
+    p: "You receive 3 to 5 properly vetted candidates within two weeks — each with written profiles and notes.",
+  },
 ];
 
 export const whySira = [
-  { h: "Speed & Precision", p: "Faster time-to-hire without compromising on quality." },
-  { h: "Market Knowledge", p: "Deep expertise across industries and talent markets." },
+  {
+    h: "Speed & Precision",
+    p: "Faster time-to-hire without compromising on quality.",
+  },
+  {
+    h: "Market Knowledge",
+    p: "Deep expertise across industries and talent markets.",
+  },
   { h: "No Shortcuts", p: "Same rigor from graduate hire to C-suite search." },
-  { h: "Confidential & Compliant", p: "Integrity and discretion throughout the process." },
+  {
+    h: "Confidential & Compliant",
+    p: "Integrity and discretion throughout the process.",
+  },
 ];
 
 export const process = [
-  { num: "01", title: "Briefing & Role Analysis", when: "Week 1", body: "We start by deeply understanding your business, team structure, culture and what success looks like in the role — at that specific level. A great search begins with a great brief." },
-  { num: "02", title: "Talent Sourcing", when: "Week 1–2", body: "We map the full market, activate our curated network and proactively headhunt the right candidates — including the passive ones who aren't actively looking but are exactly right." },
-  { num: "03", title: "Screening & Assessment", when: "Week 2", body: "Every candidate is assessed against a structured competency framework built for the role and level. Written profiles, assessment notes and a curated shortlist of 3 to 5. No shortcuts." },
-  { num: "04", title: "Placement", when: "Week 2–3", body: "We present your shortlist and walk you through each candidate with assessment notes — then support offer, negotiation and close so the right hire actually says yes." },
-  { num: "05", title: "Follow Through", when: "Day 30 · 60 · 90", body: "We check in at 30 and 60 days after every placement. Every placement comes with a 90-day replacement guarantee — because we don't disappear after the offer." },
+  {
+    num: "01",
+    title: "Briefing & Role Analysis",
+    when: "Week 1",
+    body: "We start by deeply understanding your business, team structure, culture and what success looks like in the role — at that specific level. A great search begins with a great brief.",
+  },
+  {
+    num: "02",
+    title: "Talent Sourcing",
+    when: "Week 1–2",
+    body: "We map the full market, activate our curated network and proactively headhunt the right candidates — including the passive ones who aren't actively looking but are exactly right.",
+  },
+  {
+    num: "03",
+    title: "Screening & Assessment",
+    when: "Week 2",
+    body: "Every candidate is assessed against a structured role-based framework, with profiles, assessment notes, and a curated shortlist of 3–5. No shortcuts.",
+  },
+  {
+    num: "04",
+    title: "Placement",
+    when: "Week 2–3",
+    body: "We present your shortlist and walk you through each candidate with assessment notes — then support offer, negotiation and close so the right hire actually says yes.",
+  },
+  {
+    num: "05",
+    title: "Follow Through",
+    when: "Day 30 · 60 · 90",
+    body: "We check in at 30 and 60 days after every placement. Every placement comes with a 90-day replacement guarantee — because we don't disappear after the offer.",
+  },
 ];
 
 export const pricing = [
@@ -104,7 +175,11 @@ export const pricing = [
     unit: "/ first-year gross",
     desc: "Senior leadership & C-suite placement.",
     feat: false,
-    features: ["25% of total fee upfront on signing", "75% on successful placement", "Confidential, board-ready search"],
+    features: [
+      "25% of total fee upfront on signing",
+      "75% on successful placement",
+      "Confidential, board-ready search",
+    ],
     cta: { label: "Start a search", to: "/book" },
   },
   {
@@ -114,7 +189,11 @@ export const pricing = [
     desc: "High-calibre professional placement.",
     feat: true,
     badge: "Most requested",
-    features: ["No upfront cost", "Invoiced only on successful placement", "90-day replacement guarantee"],
+    features: [
+      "No upfront cost",
+      "Invoiced only on successful placement",
+      "90-day replacement guarantee",
+    ],
     cta: { label: "Start a search", to: "/book" },
   },
   {
@@ -123,17 +202,36 @@ export const pricing = [
     unit: "project fee",
     desc: "Program design & HR advisory.",
     feat: false,
-    features: ["Scoped & agreed upfront", "No surprises before work begins", "Tailored to your objectives"],
+    features: [
+      "Scoped & agreed upfront",
+      "No surprises before work begins",
+      "Tailored to your objectives",
+    ],
     cta: { label: "Request a quote", to: "/contact" },
   },
 ];
 
 export const faqs = [
-  { q: "How quickly will I receive candidates?", a: "You receive a curated shortlist of 3 to 5 properly vetted candidates within 14 days of confirming the engagement — each with written profiles and recommendation notes." },
-  { q: "What happens if a placement doesn't work out?", a: "Every placement comes with a 90-day replacement guarantee. We also run structured 30 and 60-day check-ins to catch and resolve issues early — long before they become problems." },
-  { q: "What levels and roles do you recruit for?", a: "Everything from graduate and internship pipelines to mid-level specialists and C-suite executive search — across engineering, product, sales, finance, operations and more. Same rigor at every level." },
-  { q: "How is your pricing structured?", a: "Executive search is 20% of first-year gross salary; mid-level & specialist placement is 15%, invoiced only on successful placement; graduate programs and HR advisory are a fixed project fee scoped and agreed upfront. No hidden fees." },
-  { q: "Do you work confidentially?", a: "Yes. Integrity and discretion run through every engagement — especially executive search, where we protect both your brand and the candidate's throughout the process." },
+  {
+    q: "How quickly will I receive candidates?",
+    a: "You receive a curated shortlist of 3 to 5 properly vetted candidates within 14 days of confirming the engagement — each with written profiles and recommendation notes.",
+  },
+  {
+    q: "What happens if a placement doesn't work out?",
+    a: "Every placement comes with a 90-day replacement guarantee. We also run structured 30 and 60-day check-ins to catch and resolve issues early — long before they become problems.",
+  },
+  {
+    q: "What levels and roles do you recruit for?",
+    a: "Everything from graduate and internship pipelines to mid-level specialists and C-suite executive search — across engineering, product, sales, finance, operations and more. Same rigor at every level.",
+  },
+  {
+    q: "How is your pricing structured?",
+    a: "Executive search is 20% of first-year gross salary; mid-level & specialist placement is 15%, invoiced only on successful placement; graduate programs and HR advisory are a fixed project fee scoped and agreed upfront. No hidden fees.",
+  },
+  {
+    q: "Do you work confidentially?",
+    a: "Yes. Integrity and discretion run through every engagement — especially executive search, where we protect both your brand and the candidate's throughout the process.",
+  },
 ];
 
 export type Insight = {
@@ -151,7 +249,8 @@ export const insights: Insight[] = [
   {
     id: "rush-hiring",
     title: "The fastest way to slow down hiring is to rush it.",
-    excerpt: "The fastest way to fix a broken hiring process is to slow down — before you even write the job description. Clarity up front is what makes everything after it fast.",
+    excerpt:
+      "The fastest way to fix a broken hiring process is to slow down — before you even write the job description. Clarity up front is what makes everything after it fast.",
     category: "Hiring Strategy",
     readTime: "3 min",
     date: "Recent",
@@ -165,7 +264,8 @@ export const insights: Insight[] = [
   {
     id: "quality-of-hires",
     title: "The quality of your hires determines the quality of your growth.",
-    excerpt: "Many organisations invest heavily in marketing, technology and infrastructure — then leave hiring to chance. The people you bring in are the ceiling on everything else.",
+    excerpt:
+      "Many organisations invest heavily in marketing, technology and infrastructure — then leave hiring to chance. The people you bring in are the ceiling on everything else.",
     category: "Leadership",
     readTime: "4 min",
     date: "Recent",
@@ -179,7 +279,8 @@ export const insights: Insight[] = [
   {
     id: "costing-top-talent",
     title: "Your hiring process could be costing you top talent.",
-    excerpt: "If your process is unclear, slow or inconsistent, the best candidates quietly opt out — usually without telling you why. Here's how to spot it and fix it.",
+    excerpt:
+      "If your process is unclear, slow or inconsistent, the best candidates quietly opt out — usually without telling you why. Here's how to spot it and fix it.",
     category: "Recruitment",
     readTime: "3 min",
     date: "Recent",
@@ -193,7 +294,8 @@ export const insights: Insight[] = [
   {
     id: "structured-onboarding",
     title: "Don't underestimate the importance of good onboarding.",
-    excerpt: "Employees who go through effective onboarding are far more likely to stay long-term, and companies with structured onboarding see meaningfully higher new-hire productivity.",
+    excerpt:
+      "Employees who go through effective onboarding are far more likely to stay long-term, and companies with structured onboarding see meaningfully higher new-hire productivity.",
     category: "Retention",
     readTime: "5 min",
     date: "Recent",
@@ -207,7 +309,8 @@ export const insights: Insight[] = [
   {
     id: "ats-with-ai",
     title: "High application volume, low quality? It's an ATS problem.",
-    excerpt: "A good ATS with AI can filter out clearly unqualified candidates early, rank on real fit, and let recruiters focus on the people who actually match the role.",
+    excerpt:
+      "A good ATS with AI can filter out clearly unqualified candidates early, rank on real fit, and let recruiters focus on the people who actually match the role.",
     category: "HR Tech",
     readTime: "4 min",
     date: "Recent",
@@ -221,7 +324,8 @@ export const insights: Insight[] = [
   {
     id: "talent-retention",
     title: "Why employees leave, and why they stay.",
-    excerpt: "Attrition is rarely about money. It's usually about management, growth and transparency. Understanding the real drivers is how you build teams that last.",
+    excerpt:
+      "Attrition is rarely about money. It's usually about management, growth and transparency. Understanding the real drivers is how you build teams that last.",
     category: "Retention",
     readTime: "5 min",
     date: "Recent",
@@ -254,7 +358,8 @@ export const jobs: Job[] = [
     type: "Full-time",
     mode: "Hybrid",
     category: "HR & People",
-    summary: "A senior, strategic HR role within a venture building & venture capital firm. You'll shape people strategy, leadership capability, the talent agenda, organisational effectiveness and total rewards across the business and its portfolio ventures.",
+    summary:
+      "A senior, strategic HR role within a venture building & venture capital firm. You'll shape people strategy, leadership capability, the talent agenda, organisational effectiveness and total rewards across the business and its portfolio ventures.",
     responsibilities: [
       "Own people strategy across the firm and its portfolio ventures",
       "Build leadership capability and org effectiveness frameworks",
@@ -275,7 +380,8 @@ export const jobs: Job[] = [
     type: "Commission-only",
     mode: "Remote",
     category: "Sales",
-    summary: "A founding commission-only sales role for a builder who wants upside. You'll own the full cycle — pipeline, pitch and close — and help shape the go-to-market motion from the ground up.",
+    summary:
+      "A founding commission-only sales role for a builder who wants upside. You'll own the full cycle — pipeline, pitch and close — and help shape the go-to-market motion from the ground up.",
     responsibilities: [
       "Build and own the sales pipeline end to end",
       "Shape the go-to-market and outbound motion",
@@ -296,7 +402,8 @@ export const jobs: Job[] = [
     type: "Contract",
     mode: "On-site",
     category: "HR & People",
-    summary: "We're supporting talent sourcing for an experienced HR Operations professional on a contract basis — someone who can keep people processes running cleanly and reliably day to day.",
+    summary:
+      "We're supporting talent sourcing for an experienced HR Operations professional on a contract basis — someone who can keep people processes running cleanly and reliably day to day.",
     responsibilities: [
       "Run core HR operations and people processes",
       "Own HR systems, records and compliance",
@@ -317,7 +424,8 @@ export const jobs: Job[] = [
     type: "Full-time",
     mode: "Hybrid",
     category: "Recruitment",
-    summary: "Join SIRA HR as a Talent Acquisition Partner. You'll run searches end to end — briefing, sourcing, assessment and placement — with the rigor our clients rely on.",
+    summary:
+      "Join SIRA HR as a Talent Acquisition Partner. You'll run searches end to end — briefing, sourcing, assessment and placement — with the rigor our clients rely on.",
     responsibilities: [
       "Own client searches from brief to placement",
       "Map markets and headhunt active & passive talent",
